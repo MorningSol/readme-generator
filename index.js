@@ -4,15 +4,70 @@ const fs = require('fs')
 
 
 // TODO: Create an array of questions for user input
-const questions = [];
 
 const promptUser = () => {
     return inquirer.prompt([
-       {
-           type: 'input',
-           name: 'username',
-           message: 'Enter your GitHub user name.'
-       } 
+        {
+            type: 'input',
+            name: 'username',
+            message: 'Enter your GitHub user name.',
+
+            validate: nameInput => {
+                if (nameInput){
+                    return true;
+                }
+                else {
+                    console.log('Please enter your GitHub user name!');
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'reponame',
+            message: 'Please enter your GitHub repository name.',
+
+            validate: nameInput => {
+                if (nameInput){
+                    return true;
+                }
+                else {
+                    console.log('Please enter your GitHub repository name!');
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'title',
+            message: 'Please enter your project title.',
+
+            validate: nameInput => {
+                if (nameInput){
+                    return true;
+                }
+                else {
+                    console.log('Please enter your project title!');
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'description',
+            message: 'Please enter your project description.',
+
+            validate: nameInput => {
+                if (nameInput){
+                    return true;
+                }
+                else {
+                    console.log('Please enter your project description!');
+                }
+            }
+        },
+
+
+
+
+        
     ])
     
 }
