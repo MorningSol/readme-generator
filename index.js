@@ -70,7 +70,7 @@ const promptUser = () => {
         },
         {
             type: 'input',
-            name: 'Usage',
+            name: 'usage',
             message: 'Please provide usage information.'
         },
         {
@@ -87,8 +87,23 @@ const promptUser = () => {
             type: 'list',
             name: 'license',
             message: 'Which open source license are you using?',
-            choices: ['None', 'Apache v2', 'GNU AGPv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla PLv2', 'MIT', 'Boost Software v1', 'the Unlicense']
+            choices: ['None', 'Apache_v2', 'GNU_AGPv3', 'GNU_GPLv3', 'GNU_LGPLv3', 'Mozilla_PLv2', 'MIT', 'Boost_Software_v1', 'The_Unlicense']
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'For the questions section, please enter you e-mail address',
+
+            validate: nameInput => {
+                if (nameInput){
+                    return true;
+                }
+                else {
+                    console.log('Please enter your e-mail address!');
+                }
+            }
         }
+
    
     ])
    
