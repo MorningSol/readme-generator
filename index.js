@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
-const fs = require('fs')
-
+const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 
@@ -63,28 +63,46 @@ const promptUser = () => {
                 }
             }
         },
-
-
-
-
-        
+        {
+            type: 'input',
+            name: 'installation',
+            message: 'Please provide installation instructions.'
+        },
+        {
+            type: 'input',
+            name: 'Usage',
+            message: 'Please provide usage information.'
+        },
+        {
+            type: 'input',
+            name: 'contribution',
+            message: 'If any, please provide contribution guidelines.'
+        },
+        {
+            type: 'input',
+            name: 'installation',
+            message: 'if any, please provide test instructions.'
+        },
+        {
+            type: 'list',
+            name: 'license',
+            message: 'Which open source license are you using?',
+            choices: ['None', 'Apache v2', 'GNU AGPv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla PLv2', 'MIT', 'Boost Software v1', 'the Unlicense']
+        }
+   
     ])
-    
-}
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
+   
+};
 
 
 
-promptUser().then(answers => console.log(answers));
 
+promptUser().then(answers => {
+   const markdownPage = generateMarkdown(answers)
+   
+   fs.writeFile('./dist/readme.md', markdownPage, err => {
+       if (err) throw new Error(err);
+       console.log('Checkout your new readme file in the dist folder');
+   });
+});
 
-// https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR> 
-// https://img.shields.io/badge/license-MIT-brightgreen?style=plastic
