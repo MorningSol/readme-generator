@@ -23,20 +23,6 @@ const promptUser = () => {
         },
         {
             type: 'input',
-            name: 'reponame',
-            message: 'Please enter your GitHub repository name.',
-
-            validate: nameInput => {
-                if (nameInput){
-                    return true;
-                }
-                else {
-                    console.log('Please enter your GitHub repository name!');
-                }
-            }
-        },
-        {
-            type: 'input',
             name: 'title',
             message: 'Please enter your project title.',
 
@@ -75,7 +61,7 @@ const promptUser = () => {
         },
         {
             type: 'input',
-            name: 'contribution',
+            name: 'contributing',
             message: 'If any, please provide contribution guidelines.'
         },
         {
@@ -104,12 +90,9 @@ const promptUser = () => {
             }
         }
 
-   
     ])
    
 };
-
-
 
 
 promptUser().then(answers => {
