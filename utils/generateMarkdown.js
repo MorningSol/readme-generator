@@ -14,15 +14,15 @@ const generateToC = (installation, usage, contributing, test, license) => {
   
   ---
   ## Table of Contents
-  ${installation ? '* [Installation Instructions](#Installation Instructions)':'' }
+  ${installation ? '* [Installation](#installation)':'' }
 
-  ${usage ? '* [Usage Information](#Usage Information)':'' }
+  ${usage ? '* [Usage](#usage)':'' }
 
-  ${contributing ? '* [Contributing](#Contributing Guidelines)':'' }
+  ${contributing ? '* [Contributing](#contributing)':'' }
 
   ${license ? '* [License](#license)':'' }
   
-  ${test ? '* [Test Instructions](#Test Instructions)':'' }
+  ${test ? '* [Test](#test)':'' }
 
   * [Questions](#questions)`
 };
@@ -85,7 +85,7 @@ const generateInstall = install => {
   &nbsp;
 
   ---
-  ## Installation Instructions
+  ## Installation
   ${install}` 
 };
 
@@ -100,7 +100,7 @@ const generateUsage = usage => {
   &nbsp;
 
   ---
-  ## Usage Information
+  ## Usage
   ${usage}` 
 };
 
@@ -115,7 +115,7 @@ const generateContribution = contributing => {
   &nbsp;
 
   ---
-  ## Contributing Guidelines
+  ## Contributing
   ${contributing}` 
 };
 
@@ -130,7 +130,7 @@ const generateTest = test => {
   &nbsp;
 
   ---
-  ## Test Instructions
+  ## Test
   ${test}` 
 };
 

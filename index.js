@@ -103,7 +103,7 @@ const promptUser = () => {
 promptUser().then(answers => {
    const markdownPage = generateMarkdown(answers)
    
-   fs.writeFile('./dist/readme.md', markdownPage, err => {
+   fs.writeFile('./dist/created-readme.md', markdownPage, err => {
        if (err) throw new Error(err);
        console.log('Checkout your new readme file in the dist folder');
    });
