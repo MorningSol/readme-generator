@@ -1,11 +1,11 @@
 
 // generate table of contents if any needed and ad tabs for each section needed.
-const generateToC = (installation, usage, contributing, license) => {
+const generateToC = (installation, usage, contributing, test, license) => {
   if (license ==='None') {
     license = false;
   }
 
-  if (!installation && !usage && !contributing && !license) {
+  if (!installation && !usage && !contributing && !license && !test) {
     return '';
   }
 
@@ -14,14 +14,16 @@ const generateToC = (installation, usage, contributing, license) => {
   
   ---
   ## Table of Contents
-  ${installation ? '* [Installation](#installation)':'' }
+  ${installation ? '* [Installation Instructions](#Installation Instructions)':'' }
 
-  ${usage ? '* [Usage](#usage)':'' }
+  ${usage ? '* [Usage Information](#Usage Information)':'' }
 
-  ${contributing ? '* [Contributing](#contributing)':'' }
+  ${contributing ? '* [Contributing](#Contributing Guidelines)':'' }
 
   ${license ? '* [License](#license)':'' }
   
+  ${test ? '* [Test Instructions](#Test Instructions)':'' }
+
   * [Questions](#questions)`
 };
 
@@ -83,7 +85,7 @@ const generateInstall = install => {
   &nbsp;
 
   ---
-  ## Installation
+  ## Installation Instructions
   ${install}` 
 };
 
@@ -98,7 +100,7 @@ const generateUsage = usage => {
   &nbsp;
 
   ---
-  ## Usage
+  ## Usage Information
   ${usage}` 
 };
 
@@ -113,15 +115,30 @@ const generateContribution = contributing => {
   &nbsp;
 
   ---
-  ## Contributing
+  ## Contributing Guidelines
   ${contributing}` 
+};
+
+// create contribution section if needed.
+const generateTest = test => {
+
+  if(!test) {
+    return '';
+  }
+ 
+  return `
+  &nbsp;
+
+  ---
+  ## Test Instructions
+  ${test}` 
 };
 
 
 // Function to generate markdown for README
 function generateMarkdown(data) {
   console.log(data);
-  const {username, title, description, installation, usage, contributing, license, email} = data;
+  const {username, title, description, installation, usage, contributing, license, test, email} = data;
   
   return `
   # ${title}
@@ -130,11 +147,12 @@ function generateMarkdown(data) {
   &nbsp;
   ## Description
   ${description}
-  ${generateToC(installation, usage, contributing, license)}
+  ${generateToC(installation, usage, contributing, test, license)}
   ${generateInstall(installation)}
   ${generateUsage(usage)}
   ${generateContribution(contributing)}
   ${renderLicenseSection(license)}
+  ${generateTest(test)}
 
   &nbsp;
 

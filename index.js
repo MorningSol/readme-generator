@@ -1,9 +1,9 @@
-// TODO: Include packages needed for this application
+// packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
-// TODO: Create an array of questions for user input
+//an array of questions for user input
 
 const promptUser = () => {
     return inquirer.prompt([
@@ -74,6 +74,11 @@ const promptUser = () => {
             name: 'license',
             message: 'Which open source license are you using?',
             choices: ['None', 'Apache_v2', 'GNU_AGPv3', 'GNU_GPLv3', 'GNU_LGPLv3', 'Mozilla_PLv2', 'MIT', 'Boost_Software_v1', 'The_Unlicense']
+        },
+        {
+            type: 'input',
+            name: 'test',
+            message: 'If any, please enter test instructions.'
         },
         {
             type: 'input',
