@@ -1,10 +1,10 @@
 
-  # jjhghhjgh
-  ![License badge](https://img.shields.io/badge/License-Apache_v2-brightgreen?style=plastic)
+  # readme generator
+  ![License badge](https://img.shields.io/badge/License-GNU_AGPv3-brightgreen?style=plastic)
 
   &nbsp;
   ## Description
-  hfghfghfg
+  this is where you would input your project description.
   
   &nbsp;
   
@@ -26,37 +26,37 @@
 
   ---
   ## Installation
-  gfdgfd
+  this is where you would input your installation instructions
   
   &nbsp;
 
   ---
   ## Usage
-  gdfgdf
+  this is where you would enter your usage information.
   
   &nbsp;
 
   ---
   ## Contributing
-  gdfgdf
+  this is where you would enter your contributing guidelines
   
   &nbsp;
 
   ---
   ## License
-  Open Source License used: [Apache_v2](https://choosealicense.com/licenses/apache-2.0)
+  Open Source License used: [GNU_AGPv3](https://choosealicense.com/licenses/agpl-3.0)
   
   &nbsp;
 
   ---
   ## Test
-  gdfgdf
+  this is where you would input your testing instructions.
 
   &nbsp;
 
   ---
   ## Questions
   Please contact me if you have any questions.
-  - [GitHub Profile](https://github.com/kjhkjhkj)
-  - [By e-mail](mailto:fsdfds)
+  - [GitHub Profile](https://github.com/morningsol)
+  - [By e-mail](mailto:someemail@hotmail.com)
 
